@@ -1,0 +1,14 @@
+alembic
+bcrypt
+fastapi
+passlib
+psycopg2-binary
+pydantic
+python-dotenv
+python-jose
+python-multipart
+sqlalchemy
+uvicorn
+requests
+python-socketio
+aiohttp
