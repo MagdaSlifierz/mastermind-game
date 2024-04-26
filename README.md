@@ -193,10 +193,10 @@ When a user hits the start game, then two requests are send to create a game and
 
 ```
 ```
-  '2 correct numbers and 0 correct locations',
-  '1 correct number and 1 correct location',
-  '1 correct number and 1 correct location',
-  'all incorrect...',
+  '2 correct number(s), 0 correct place(s)',
+  '1 correct number(s), 1 correct place(s)',
+  '1 correct number(s), 1 correct place(s)',
+  '0 correct number(s), 0 correct place(s)',
   '',
   '',
   '',
@@ -363,12 +363,12 @@ My setup helped me to keeps the router layer lightweight and focused solely on r
 
 | HTTP Method | Endpoint                        | Description                                      | Response Model              | Status Code              |
 |-------------|---------------------------------|--------------------------------------------------|-----------------------------|--------------------------|
-| **POST**    | `/attempts`                     | Creates a new attempt for a specified game.      | `AttemptSchema`             | `201 Created`            |
 | **GET**     | `/difficulties`                 | Retrieves all difficulty settings.               | `List[DifficultySchema]`    | `200 OK`                 |
 | **GET**     | `/difficulties/{difficulty_id}` | Retrieves a specific difficulty by ID.           | `DifficultySchema`          | `200 OK` / `404 Not Found`|
 | **POST**    | `/games`                        | Initiates a new game, setting up necessary data. | `GameSchema`                | `201 Created`            |
 | **GET**     | `/games`                        | Lists all games in the system.                   | `List[GameSchema]`          | `200 OK`                 |
 | **GET**     | `/games/{game_id}`              | Retrieves detailed information about a game.     | `GameSchema`                | `200 OK` / `404 Not Found`|
+| **POST**    | `/games/{game_id}/attempts`     | Creates a new attempt for a specified game.      | `AttemptSchema`             | `201 Created`            |
 | **GET**     | `/games/{game_id}/attempts`     | Lists all attempts for a specified game.         | `List[AttemptSchema]`       | `200 OK`                 |
 | **GET**     | `/games/{game_id}/hints`        | Provides a hint for the specified game.          | `str`                       | `200 OK` / `404 Not Found`|
 | **POST**    | `/users`                        | Creates a new user profile.                      | `Location Header`           | `201 Created`            |
